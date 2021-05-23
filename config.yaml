@@ -1,10 +1,10 @@
 baseURL: https://coollibs.github.io/CoolLab-Devlog2/
 languageCode: en-us
 defaultContentLanguage: en
-title: Cupper
+title: Cool Lab
 theme: cupper-hugo-theme
 googleAnalytics: UA-123456789-1
-disqusShortname: jules_fouchy
+disqusShortname: cool-lab
 enableGitInfo: true
 
 taxonomies:

@@ -9,6 +9,14 @@ draft: false
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 ![Alt text here](/src/images/is0.png)
 
+```C++
+int i = 0;
+for (auto x = 0; x < 10; ++x) {
+	i += x;
+}
+return x;
+```
+
 Especially since there can be different ways of controlling a camera (trackball, freefly, turntable, etc.)
 
 ## How separate should the view and the projection be ?

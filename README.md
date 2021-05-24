@@ -1,6 +1,6 @@
 # CoolLab Devlog
 
-We use this theme https://github.com/zwbetz-gh/cupper-hugo-theme.
+See the website at : https://coollibs.github.io/CoolLab-Devlog/
 
 How to edit the website :
 
@@ -26,6 +26,8 @@ hugo new content/post/my-article.md
 You can now open the newly created *content/post/my-article.md* file and start writing.
 
 You will find an overview of the markdown syntax [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), and a list of all the additional commands [here](https://themes.gohugo.io//theme/cupper-hugo-theme/cupper-shortcodes/).
+
+We use this theme :  https://github.com/zwbetz-gh/cupper-hugo-theme ; you might find some useful information there.
 
 ## Customize the frontmatter
 

@@ -31,7 +31,24 @@ We use this theme :  https://github.com/zwbetz-gh/cupper-hugo-theme ; you might 
 
 ## Customize the frontmatter
 
-The frontmatter is the area where you define the infos of your article (it is delimited by *---* at the top of your file).
+The frontmatter is the area where you define metadatas and parameters for your article (it is delimited by *---* at the top of your file).
+
+### author
+
+If you haven't been added already, go to *layouts/post/single.html* and add a block like this :
+```
+{{ if eq .Params.author "jules" }}
+      <a href="https://julesfouchy.github.io/home/">Jules Fouchy</a>
+{{ end }}
+```
+
+### toc
+
+Enable or disable the table of content.
+
+### draft
+
+Hides your article when set to true.
 
 ## Deploy your changes
 

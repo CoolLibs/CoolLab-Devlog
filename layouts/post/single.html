@@ -7,6 +7,15 @@
       {{ .Title }}
     </h1>
 
+    {{ if .Params.author }}
+      <div class="date">
+        <strong>{{ "Author: " }}</strong>
+        {{ if eq .Params.author "jules" }}
+          <a href="https://julesfouchy.github.io/home/">Jules Fouchy</a>
+        {{ end }}
+      </div>
+    {{ end }}
+
     <div class="date">
       {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
       {{ $publishDate := .PublishDate }}

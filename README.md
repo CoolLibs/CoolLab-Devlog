@@ -4,6 +4,14 @@ See the website at : https://coollibs.github.io/CoolLab-Devlog/
 
 How to edit the website :
 
+## Clone the repo
+
+/!\ This repo has a submodule, so you need to grab it too ! This can be done with the *--recurse-submodules* option :
+
+```
+git clone https://github.com/CoolLibs/CoolLab-Devlog --recurse-submodules
+```
+
 ## Install Hugo
 
 We use a static site generator called Hugo. Download it here : https://gohugo.io/getting-started/installing
@@ -25,7 +33,7 @@ hugo new content/post/my-article.md
 
 You can now open the newly created *content/post/my-article.md* file and start writing.
 
-You will find an overview of the markdown syntax [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), and a list of all the additional commands [here](https://themes.gohugo.io//theme/cupper-hugo-theme/cupper-shortcodes/).
+You can find an overview of the markdown syntax [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), and a list of all the additional commands [here](https://themes.gohugo.io//theme/cupper-hugo-theme/cupper-shortcodes/).
 
 We use this theme :  https://github.com/zwbetz-gh/cupper-hugo-theme ; you might find some useful information there.
 

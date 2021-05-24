@@ -1,8 +1,10 @@
 ---
 title: "Camera"
 date: 2021-05-24T00:46:44+02:00
-draft: false
 author: jules
+tags: []
+toc: true
+draft: false
 ---
 
 ## Separate the data from the controller

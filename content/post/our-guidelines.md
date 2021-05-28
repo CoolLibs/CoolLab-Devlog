@@ -18,6 +18,8 @@ https://www.youtube.com/watch?v=XkDEzfpdcSg&t=3m15s
 Naming is important (and hard), so please be mindful when you choose a name : be explicit, don't be too afraid of long names. And most importantly : make sure the name describes what the thing is, nothing more, nothing less.
 Also, don't hesitate to rename, especially in the early days of the codebase, until we reach the right name. Everybody makes mistakes, but better fiw them ;) (And by the way, right click -> Rename is an amazing feature)
 
+Create types and methods with explicit names, and rename them *as soon as* you realize the name doesn't quite match what the type actually is / what the method actually does.
+
 About naming :
 https://www.youtube.com/watch?v=FyCYva9DhsI&t=41m34s (watch until at least 51:30 if you want to laugh a lot)
 

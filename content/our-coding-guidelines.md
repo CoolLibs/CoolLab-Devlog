@@ -3,8 +3,9 @@ title: "Our Coding Guidelines"
 toc: true
 ---
 
-Coding styles don't matter, and that's why we need to choose one and stick to it.
-There is no right answer to where you should put your curly braces, or whether you shoud use camelCase or snake_case ; if there was, we woud have agreed on it years ago.
+Coding styles don't matter, and that's why we simply have to choose one and stick to it.
+
+**There is no right answer** to where you should put your curly braces, or whether you shoud use camelCase or snake_case. If there was, all the developers of the world would have agreed on it years ago.
 So we just need to pick one, and move on.
 
 https://www.youtube.com/watch?v=XkDEzfpdcSg&t=3m15s
@@ -24,4 +25,8 @@ https://www.youtube.com/watch?v=FyCYva9DhsI&t=24m49s
 
 (by the way, watch the whole conference it's great)
 
-## snake_case
+## Snake Case
+
+We could have chosen camelCase, but we chose snake_case.
+
+I used to use camel case

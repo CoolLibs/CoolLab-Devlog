@@ -32,25 +32,29 @@ params:
 
 menu:
   nav:
+    - name: Home
+      url: /
+      weight: 1
+      
     - name: Blog
       url: /post/
-      weight: 1
+      weight: 2
       
     - name: Our Philosophy
       url: /our-philosophy/
-      weight: 2
+      weight: 3
 
     - name: Our Roadmap
       url: /our-roadmap/
-      weight: 3
+      weight: 4
             
     - name: Our Coding Guidelines
       url: /our-coding-guidelines/
-      weight: 4
+      weight: 5
 
     - name: About
       url: /about/
-      weight: 5
+      weight: 6
       
     - name: Tags
       url: /tags/

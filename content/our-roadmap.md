@@ -1,10 +1,6 @@
 ---
 title: "Our Roadmap"
-date: 2021-05-24T23:29:21+02:00
-author: jules
-tags: []
 toc: true
-draft: false
 ---
 
 ## Layer system

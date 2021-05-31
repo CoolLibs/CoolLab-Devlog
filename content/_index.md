@@ -13,6 +13,8 @@ https://github.com/CoolLibs/CoolLab
 
 This devlog is here to document our process and thoughts as we build these tools, as well as all the crazy (good) ideas that we have and might want to implement one day 😇
 
+If you want to contribute to the project, you might want to take a look at the [Getting Started](./getting-started) section.
+
 {{< figureCupper
 img="is0-nodes.png" 
 caption="is0, our node-based CSG modeler, rendered with Ray Marching." 

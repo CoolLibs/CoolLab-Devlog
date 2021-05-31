@@ -9,7 +9,7 @@ draft: false
 
 I often end up writting classes that wrap other classes or primitive types.
 
-```C++
+```cpp
 struct MyData {
       float field1;
       float field2;
@@ -21,7 +21,7 @@ struct MyData {
 }
 ```
 
-```C++
+```cpp
 class MyDataWrapper {
 public:
       void do_something_else();
@@ -33,7 +33,7 @@ private:
 
 And for a long time I was annoyed when needing to access the underlying wrapped class. At first I was writting one getter function for each method or field of the wrapped class that I still needed to access.
 
-```C++
+```cpp
 class MyDataWrapper {
 public:
       void do_something_else();
@@ -55,7 +55,7 @@ But that was a lot of boilerplate code to write and I couldn't stand it. It get'
 
  So I moved to having only one getter function, typically called *get*, that would return a reference to the whole wrapped class.
 
- ```C++
+ ```cpp
 class MyDataWrapper {
 public:
       void do_something_else();
@@ -67,18 +67,18 @@ private:
       MyData _my_data;
 }
 ```
- 
- In my opinion this is already much better because the implementor of the wrapper class needs to write way less code, and doesn't need to maintain it when the wrapped class changes.
- 
- But the API isn't as nice anymore ! We moved from
 
-```C++
+In my opinion this is already much better because the implementor of the wrapper class needs to write way less code, and doesn't need to maintain it when the wrapped class changes.
+
+But the API isn't as nice anymore ! We moved from
+
+```cpp
 my_data_wrapper.do_something();
 ```
 
 to
 
-```C++
+```cpp
 my_data_wrapper.get().do_something();
 ```
 
@@ -86,7 +86,7 @@ Basically, no matter what I call my getter function, it is still too long of a n
 
 So here comes the ultimate solution : **Overload the dereference operators** ! This makes the API only one character longuer than the original solution, and doesn't require the implementor to write a lot of boilerplate code either ! The best of both worlds !
 
-```C++
+```cpp
 my_data_wrapper->do_something();
 ```
 
@@ -94,7 +94,7 @@ The only downside I can think of is that the syntax can be confusing for people 
 
 For reference, this is how you would overload the dereference operators :
 
- ```C++
+```cpp
 class MyDataWrapper {
 public:
       void do_something_else();

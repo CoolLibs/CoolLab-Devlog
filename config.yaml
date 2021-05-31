@@ -19,7 +19,9 @@ imaging:
 params:
   description: A patchwork of creative tools based on [Cool](https://github.com/CoolLibs).
   homeMetaContent: A patchwork of creative tools based on Cool.
-  footer: Made with [Hugo](https://gohugo.io/). Themed by [Cupper](https://github.com/zwbetz-gh/cupper-hugo-theme).
+  footer: "Spot a mistake ? Report it [here](https://github.com/CoolLibs/CoolLab-Devlog/issues) !
+  \n\n
+  Made with [Hugo](https://gohugo.io/). Themed by [Cupper](https://github.com/zwbetz-gh/cupper-hugo-theme)."
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006
   codePenUser: someUser
@@ -51,17 +53,21 @@ menu:
     - name: Our Coding Guidelines
       url: /our-coding-guidelines/
       weight: 5
+            
+    - name: Getting Started
+      url: /getting-started/
+      weight: 6
 
     - name: About
       url: /about/
-      weight: 6
+      weight: 7
       
     - name: Tags
       url: /tags/
-      weight: 7
+      weight: 8
     - name: RSS
       url: /index.xml
-      weight: 8
+      weight: 9
 
 markup:
   defaultMarkdownHandler: goldmark

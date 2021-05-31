@@ -33,7 +33,11 @@ hugo new content/post/my-article.md
 
 You can now open the newly created *content/post/my-article.md* file and start writing.
 
-You can find an overview of the markdown syntax [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), and a list of all the additional commands [here](https://themes.gohugo.io//theme/cupper-hugo-theme/cupper-shortcodes/).
+You can find an overview of the Markdown syntax [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), and a list of all the additional commands [here](https://themes.gohugo.io//theme/cupper-hugo-theme/cupper-shortcodes/).
+You can also use LaTeX inside Markdown like so : 
+```
+$$ \frac{1}{2} $$
+```
 
 We use this theme :  https://github.com/zwbetz-gh/cupper-hugo-theme ; you might find some useful information there.
 

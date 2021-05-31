@@ -50,24 +50,21 @@ menu:
       url: /our-roadmap/
       weight: 4
             
-    - name: Our Coding Guidelines
-      url: /our-coding-guidelines/
-      weight: 5
-            
     - name: Getting Started
       url: /getting-started/
-      weight: 6
+      weight: 5
 
     - name: About
       url: /about/
-      weight: 7
+      weight: 6
       
     - name: Tags
       url: /tags/
-      weight: 8
+      weight: 7
+
     - name: RSS
       url: /index.xml
-      weight: 9
+      weight: 8
 
 markup:
   defaultMarkdownHandler: goldmark

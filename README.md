@@ -62,6 +62,10 @@ Enable or disable the table of content.
 
 Hides your article when set to true.
 
+## Syntax highlighting
+
+If you want to add support for a language, go to [this page](https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+c+cpp+cmake+git+glsl+hlsl+ignore+latex+makefile+markdown+opencl+processing+python+rust+typescript+unrealscript), add you language to the list, download the .js and .css files and place them in *static/js* and *static/css* (replace the old prism files). Then update this readme with the new prismjs webpage url.
+
 ## Deploy your changes
 
 Simply push them on GitHub and the site will be updated automatically.

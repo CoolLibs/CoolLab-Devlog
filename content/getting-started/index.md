@@ -26,6 +26,8 @@ Once the feature is finished (or advanced enough that it would be interesting to
 - merge *main* into your branch and resolve any conflict that might arise
 - submit a pull request and wait for the peer review
 
+## Write documentation
+
 ## How to : Add a Submodule
 
 Cool is highly based on the concept of submodule. Each small Cool library is included in the main project as a submodule. It allows us to keep all the repositories separated and share them across projects.
@@ -45,6 +47,18 @@ command="Resize"
 options="700x" >}}
 
 ## How to : Write a Cool Submodule
+
+Wrap your code in the Cool namespace
+
+```cpp
+namespace Cool {
+
+class MyClass {
+      // . . .
+};
+
+} // namespace Cool
+```
 
 ## When to : Write a Cool Submodule
 

@@ -1,7 +1,7 @@
 ---
 title: "C++ Fondamentals"
 date: 2021-05-27T12:54:14+02:00
-author:
+author: jules
 tags: []
 toc: true
 draft: false

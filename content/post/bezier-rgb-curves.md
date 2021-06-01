@@ -1,7 +1,7 @@
 ---
 title: "Bezier Rgb Curves"
 date: 2021-05-28T14:00:28+02:00
-author:
+author: jules
 tags: []
 toc: true
 draft: false

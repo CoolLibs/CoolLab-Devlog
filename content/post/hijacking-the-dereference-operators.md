@@ -1,5 +1,5 @@
 ---
-title: "Hijacking the Dereference Operators for Wrapper Classes"
+title: "Hijacking the Dereference Operators"
 date: 2021-05-26T15:23:15+02:00
 author: jules
 tags: []
@@ -108,4 +108,6 @@ private:
 };
 ```
 
-You can see this pattern in action in the *Params* module for example : https://github.com/CoolLibs/Params/blob/main/src/Cool/Params/Params.h
+You can see this pattern in action in the [*Params* module](https://github.com/CoolLibs/Params/blob/main/src/Cool/Params/Params.h) for example.
+
+This is also used in [std::optional](https://en.cppreference.com/w/cpp/utility/optional) by the way !

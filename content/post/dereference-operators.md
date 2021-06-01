@@ -18,7 +18,7 @@ struct MyData {
       float field5;
 
       void do_something();
-}
+};
 ```
 
 ```cpp
@@ -28,7 +28,7 @@ public:
 
 private:
       MyData _my_data;
-}
+};
 ```
 
 And for a long time I was annoyed when needing to access the underlying wrapped class. At first I was writting one getter function for each method or field of the wrapped class that I still needed to access.
@@ -48,7 +48,7 @@ public:
 
 private:
       MyData _my_data;
-}
+};
 ```
 
 But that was a lot of boilerplate code to write and I couldn't stand it. It get's especially annoying when you do some refactor or API change, because now you have to propagate the changes in two classes instead of one.
@@ -65,7 +65,7 @@ public:
 
 private:
       MyData _my_data;
-}
+};
 ```
 
 In my opinion this is already much better because the implementor of the wrapper class needs to write way less code, and doesn't need to maintain it when the wrapped class changes.
@@ -105,7 +105,7 @@ public:
 
 private:
       MyData _my_data;
-}
+};
 ```
 
 You can see this pattern in action in the *Params* module for example : https://github.com/CoolLibs/Params/blob/main/src/Cool/Params/Params.h

@@ -150,5 +150,5 @@ public:
 
 private:
       float _my_member_variable = 0.f;
-}
+};
 ```

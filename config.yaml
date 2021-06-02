@@ -30,7 +30,7 @@ params:
   search: true
   showThemeSwitcher: true
   moveFooterToHeader: false
-  logoAlt: "An alternative text description of the logo"
+  logoAlt: "The Cool Lab logo"
 
 menu:
   nav:

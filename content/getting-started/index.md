@@ -28,6 +28,54 @@ Once the feature is finished (or advanced enough that it would be interesting to
 
 ## Write documentation
 
+We use Doxygen-style documentation. I would suggest you install [this extension](https://marketplace.visualstudio.com/items?itemName=FinnGegenmantel.doxygenComments) for Visual Studio, or [this one]() for VS Code.
+
+And good documentation always comes with examples. Here is an example of some good documentation : [p5.js](https://p5js.org/reference/#/p5/quad)
+
+## Write an article
+
+It would be nice to have an article on this website for each module we write. The goal of those articles is to describe our thought process and the technical choices that we make (architecture, design pattern, optimization / simplicity of the API, . . .).
+
+It is a great way of creating and sharing knowledge : these resources will surely prove useful to many one day, and forcing you to write down the choices you made should have you question whether they are really the best, and strive to improve your own design.
+
+**To learn how to edit this website**, check it out [on GitHub](https://github.com/CoolLibs/CoolLab-Devlog/).
+
+## Write debug checks
+
+If there is some invariant that must be verified, add debug checks to make sure users of your code don't mess up !
+You can use *assert* in the simpler cases, but sometimes you will need to add variables to keep track of some state. In that case, wrap the debug code in a 
+```
+#ifndef NDEBUG
+// . . .
+#endif
+```
+block so that it doesn't impact release build performance.
+
+An example would be to make sure an initialization function is called once, and only once :
+
+```cpp
+class MyClass {
+public:
+      void initialize() {
+#ifndef NDEBUG
+            assert(!_is_initialized);
+            _is_initialized = true;
+#endif
+            // . . .
+      }
+
+      void use_my_class() {
+            assert(_is_initialized);
+            // . . .
+      }
+
+private:
+#ifndef NDEBUG
+      bool _is_initialized = false;
+#endif
+};
+```
+
 ## How to : Add a Submodule
 
 Cool is highly based on the concept of submodule. Each small Cool library is included in the main project as a submodule. It allows us to keep all the repositories separated and share them across projects.
@@ -96,7 +144,7 @@ https://www.youtube.com/watch?v=FyCYva9DhsI&t=24m49s
 
 (By the way, watch the whole conference it's great)
 
-### Refer to the C++ Guidelines
+### Refer to the [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
 
 There is a lot of great people out there that have gathered a big list of great ideas for your code, and they might prove usefull to you one day.
 

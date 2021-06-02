@@ -24,3 +24,9 @@ Telling a developer there is already code to do that is like telling a songwritt
 <iframe width="880" height="495" src="https://www.youtube.com/embed/vINkWUe874c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Build an ecosystem of open source libraries and document the design decisions that were made
+
+## Be cross-platform
+
+Refuse any solution that would reduce accessibility to the software, especially when cross-platform solutions exist.
+
+Examples of such technologies are Cuda (Nvidia only, can be replaced by Vulkan Compute Shaders) and OpenGL 4.0 and greater (not suported on MacOS, can be replaced by Vulkan or WebGPU).

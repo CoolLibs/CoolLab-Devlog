@@ -6,7 +6,7 @@ How to edit the website :
 
 ## Clone the repo
 
-/!\ This repo has a submodule, so you need to grab it too ! This can be done with the *--recurse-submodules* option :
+⚠️ This repo has a submodule, so you need to grab it too ! This can be done with the *--recurse-submodules* option :
 
 ```
 git clone https://github.com/CoolLibs/CoolLab-Devlog --recurse-submodules

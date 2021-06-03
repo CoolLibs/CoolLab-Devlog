@@ -56,4 +56,6 @@ See [Bezier Rgb Curves](../bezier-rgb-curves/)
 
 ### Good include system / meta language on top of glsl
 
+### Glsl Parsing !
+
 -> Look at shaderc (https://github.com/google/shaderc, https://www.youtube.com/watch?v=SXDlZRDjtXg) or naga (https://github.com/gfx-rs/naga)

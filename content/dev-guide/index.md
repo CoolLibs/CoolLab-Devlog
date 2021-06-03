@@ -70,7 +70,7 @@ GLDebug(glLinkProgram(program_id));
 GLDebug(glValidateProgram(program_id));
 ```
 
-### Modern Debugging (requires OpenGL 4.4 or later)
+### Modern Debugging (requires OpenGL 4.3 or later)
 
 Modern debugging happens automatically.
 

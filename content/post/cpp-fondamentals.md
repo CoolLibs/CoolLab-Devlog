@@ -16,3 +16,5 @@ Vectors of vectors are evil.
 ## Smart Pointers
 
 ## Precompiled Header
+
+## Debug vs Release modes

@@ -13,7 +13,9 @@ It is built on top of other amazing libraries like __*glfw*__, __*Dear ImGui*__,
 
 This devlog is here to document our process and thoughts as we build these tools, as well as all the crazy (good) ideas that we have and might want to implement one day 😇
 
-If you want to contribute to the project, you might want to take a look at the [Getting Started](./getting-started) section.
+If you wish to contribute to the project, you might want to take a look at the [Dev Guide](./dev-guide).
+
+If you want to use the project, take a look at the [User Guide](./user-guide).
 
 {{< figureCupper
 img="is0-nodes.png" 

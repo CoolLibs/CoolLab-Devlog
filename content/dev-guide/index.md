@@ -1,5 +1,5 @@
 ---
-title: "Getting Started"
+title: "Dev Guide"
 toc: true
 ---
 
@@ -16,6 +16,24 @@ git clone --recurse-submodules https://github.com/CoolLibs/CoolLab
 
 ## Build
 
+Install [CMake](https://cmake.org/download/).
+If you already have it, make sure you have version 3.16 or later.
+
+
+## imgui.ini
+
+*imgui.ini* stores the position and size of our ImGui windows. It is nice to have it on the repo so that anyone cloning it will get a nice UI layout from the get go.
+
+But you might want to do 
+
+```
+git update-index --assume-unchanged imgui.ini
+```
+
+to ignore it from your commits (It does change every time you move a window in your app, so basically it would be present in every commit).
+
+You should only commit it once in a while, when new windows are added for example.
+
 ## Work on a branch
 
 **Never commit directly on the *main* branch !** This is to avoid having to resolve merge conflicts on every commit while many people work on different areas. It is simpler that we each work on a branch, and only merge once in a while.
@@ -25,6 +43,38 @@ When you start working on a feature, create a dedicated branch and work there.
 Once the feature is finished (or advanced enough that it would be interesting to merge) :
 - merge *main* into your branch and resolve any conflict that might arise
 - submit a pull request and wait for the peer review
+
+## Logging
+
+To log to the console, use
+```cpp
+Log::Info("You can use a variable, or a string like this one, which can be templated with some curly braces like so : {} {}", variable1ThatWillGoInTheCurlyBraces, variable2);
+Log::Warn("same parameters");
+Log::Error("same parameters");
+```
+The difference is that *Info* outputs green text, *Warn* is yellow and *Error* is red.
+Also, *Error* will trigger a breakpoint (you can use *ErrorWithoutBreakpoint* instead if you don't want that behaviour).
+
+Note that those logs will be removed in release builds.
+If you want to display a message to the final user, use Log::ToUser instead of Log.
+
+## OpenGL
+
+### GLDebug
+
+Always wrap your OpenGL calls in the *GLDebug(...)* macro. It will add debug checks in case your computer doesn't support modern OpenGL debugging.
+
+```cpp
+GLDebug(GLuint program_id = glCreateProgram());
+GLDebug(glLinkProgram(program_id));
+GLDebug(glValidateProgram(program_id));
+```
+
+### Modern Debugging (requires OpenGL 4.4 or later)
+
+Modern debugging happens automatically.
+
+You can ignore some warnings and control the look of the messages in the *App* module, under *internal/GLDebugCallback.h*.
 
 ## Write documentation
 

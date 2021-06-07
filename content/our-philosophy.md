@@ -30,3 +30,7 @@ Telling a developer there is already code to do that is like telling a songwritt
 Refuse any solution that would reduce accessibility to the software, especially when cross-platform solutions exist.
 
 Examples of such technologies are Cuda (Nvidia only, can be replaced by Vulkan Compute Shaders) and OpenGL 4.0 and greater (not suported on MacOS, can be replaced by Vulkan or WebGPU).
+
+## Visual Quality over Performance
+
+We are not building a game engine ; even though performance is important because we wanna be able to visualize our changes in real time, visual quality is and should remain our main focus.

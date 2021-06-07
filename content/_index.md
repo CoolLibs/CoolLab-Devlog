@@ -5,9 +5,9 @@ toc: true
 
 Welcome to **Cool Lab** 🥳
 
-[**Cool**](https://github.com/CoolLibs) is an open-source framework designed to build image-oriented software.
+[**Cool**](https://github.com/CoolLibs) is an open-source framework designed for image-oriented software.
 
-It is built on top of other amazing libraries like __*glfw*__, __*Dear ImGui*__, __*glm*__, __*spdlog*__, __*cereal*__, __*stb*__,  __*boxer*__, __*nfd*__ and many more.
+It is built on top of other amazing open-source projects like __*glfw*__, __*Dear ImGui*__, __*glm*__, __*spdlog*__, __*cereal*__, __*stb*__,  __*boxer*__, __*nfd*__ and many more.
 
 [**Cool Lab**](https://github.com/CoolLibs/CoolLab) is a patchwork of creative tools based on Cool. It is mainly focused on image and video generation, and includes some audio as well.
 

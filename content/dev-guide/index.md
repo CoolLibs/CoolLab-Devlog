@@ -48,12 +48,12 @@ Once the feature is finished (or advanced enough that it would be interesting to
 
 To log to the console, use
 ```cpp
-Log::Info("You can use a variable, or a string like this one, which can be templated with some curly braces like so : {} {}", variable1ThatWillGoInTheCurlyBraces, variable2);
-Log::Warn("same parameters");
-Log::Error("same parameters");
+Log::info("You can use a variable, or a string like this one, which can be templated with some curly braces like so : {} {}", variable1ThatWillGoInTheCurlyBraces, variable2);
+Log::warn("same parameters");
+Log::error("same parameters");
 ```
-The difference is that *Info* outputs green text, *Warn* is yellow and *Error* is red.
-Also, *Error* will trigger a breakpoint (you can use *ErrorWithoutBreakpoint* instead if you don't want that behaviour).
+The difference is that *info* outputs green text, *warn* is yellow and *error* is red.
+Also, *error* will trigger a breakpoint (you can use *error_without_breakpoint* instead if you don't want that behaviour).
 
 Note that those logs will be removed in release builds.
 If you want to display a message to the final user, use Log::ToUser instead of Log.

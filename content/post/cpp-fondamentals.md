@@ -15,6 +15,8 @@ Vectors of vectors are evil.
 
 ## Smart Pointers
 
+## std::string_view
+
 ## Precompiled Header
 
 ## Debug vs Release modes

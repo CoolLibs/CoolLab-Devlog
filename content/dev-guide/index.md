@@ -16,13 +16,15 @@ git clone --recurse-submodules https://github.com/CoolLibs/CoolLab
 
 ## Build
 
-Install [CMake](https://cmake.org/download/).
-If you already have it, make sure you have version 3.16 or later.
+Install [CMake](https://cmake.org/download/). If you already have it, make sure you have version 3.16 or later.
 
+Then, I recommend [this VS Code extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools).
+
+Finally you will need to setup the extension with a compiler. Here is [the tutorial](https://code.visualstudio.com/docs/cpp/cmake-linux). It is based on Linux but at the bottom of the page you will find the explanations to adapt it for [Windows](https://code.visualstudio.com/docs/cpp/config-msvc) and [Mac](https://code.visualstudio.com/docs/cpp/config-clang-mac).
 
 ## imgui.ini
 
-*imgui.ini* stores the position and size of our ImGui windows. It is nice to have it on the repo so that anyone cloning it will get a nice UI layout from the get go.
+The *imgui.ini* file stores the position and size of our ImGui windows. It is nice to have it on the repo so that anyone cloning it will get a nice UI layout from the get go.
 
 But you might want to do 
 
@@ -56,13 +58,13 @@ The difference is that *info* outputs green text, *warn* is yellow and *error* i
 Also, *error* will trigger a breakpoint (you can use *error_without_breakpoint* instead if you don't want that behaviour).
 
 Note that those logs will be removed in release builds.
-If you want to display a message to the final user, use Log::ToUser instead of Log.
+If you want to display a message to the end user, use Log::ToUser instead of Log.
 
 ## OpenGL
 
 ### GLDebug
 
-Always wrap your OpenGL calls in the *GLDebug(...)* macro. It will add debug checks in case your computer doesn't support modern OpenGL debugging.
+Always wrap your OpenGL calls in the *GLDebug(...)* macro. It will add debug checks even if your computer doesn't support modern OpenGL debugging.
 
 ```cpp
 GLDebug(GLuint program_id = glCreateProgram());
@@ -78,9 +80,22 @@ You can ignore some warnings and control the look of the messages in the *App* m
 
 ## Write documentation
 
-We use Doxygen-style documentation. I would suggest you install [this extension](https://marketplace.visualstudio.com/items?itemName=FinnGegenmantel.doxygenComments) for Visual Studio, or [this one]() for VS Code.
+We use Doxygen-style documentation. I would suggest you install [this extension for VS Code](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
 
-And good documentation always comes with examples. Here is an example of some good documentation : [p5.js](https://p5js.org/reference/#/p5/quad)
+Then you simply need to type /\*\* and press *enter* to generate the documenting comment for the class or method.
+
+Try to be as descriptive as possible in your documentation : mention any hickups and subtleties, and give an example if the usage is not obvious.
+
+```cpp
+/**
+ * @brief Returns the Color of the (x, y) pixel. No bound checking is done, so this will crash if x is not inside [0, width() - 1] or y is not inside [0, height() - 1]
+ * 
+ * @param x x coordinate of the pixel (0 is at the left of the image)
+ * @param y y coordinate of the pixel (0 is at the bottom of the image)
+ * @return The Color of the given pixel
+ */
+inline Color& color_at(unsigned int x, unsigned int y) { return _pixel_colors[x + y * _width]; }
+```
 
 ## Write an article
 
@@ -126,25 +141,9 @@ private:
 };
 ```
 
-## How to : Add a Submodule
+## How to : Write a Cool module
 
-Cool is highly based on the concept of submodule. Each small Cool library is included in the main project as a submodule. It allows us to keep all the repositories separated and share them across projects.
-
-To add a new submodule to the project :
-
-{{< figureCupper
-img="gitkraken-add-submodule.png" 
-caption="Add the repo as a submodule. Make sure to put it in the Cool folder (in the \"Name/Path\" field)"
-command="Resize" 
-options="700x" >}}
-
-{{< figureCupper
-img="cmake-add-submodule.png" 
-caption="Declare the submodule in the CMakeLists.txt" 
-command="Resize" 
-options="700x" >}}
-
-## How to : Write a Cool Submodule
+Create a dedicated folder, and an "internal" folder inside it. In "internal" you will put your .cpp files, as well as the .h that are not part of the public API you want to expose.
 
 Wrap your code in the Cool namespace
 
@@ -158,7 +157,9 @@ class MyClass {
 } // namespace Cool
 ```
 
-## When to : Write a Cool Submodule
+## When to : Write a Cool module
+
+Everything that might be reused across projects should be part of the Cool framework.
 
 ## Commit Guidelines
 
@@ -196,7 +197,7 @@ https://www.youtube.com/watch?v=FyCYva9DhsI&t=24m49s
 
 ### Refer to the [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
 
-There is a lot of great people out there that have gathered a big list of great ideas for your code, and they might prove usefull to you one day.
+There is a lot of great people out there that have gathered a big list of great ideas for your code, and they might prove useful to you one day.
 
 I would suggest you start by watching this amazing conference :
 
@@ -230,11 +231,7 @@ https://www.youtube.com/watch?v=XkDEzfpdcSg&t=3m15s
 
 #### Snake Case
 
-We could have chosen camelCase, but we chose snake_case.
-
-I used to use camel case, and then started to learn Rust which forces you to use snake case. And well, after a short period of adaptation I started really enjoying snake case because the separation between words is clearer, and therefore long names are easier to read.
-
-So here you are, I now use snake case.
+I used to use camel case, and then started to learn Rust which forces you to use snake_case. And well, after a short period of adaptation I started really enjoying snake case because the separation between words is clearer, and therefore long names are easier to read.
 
 #### Member variables
 

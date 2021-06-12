@@ -44,6 +44,12 @@ And how do we send these curves to the shader ? Do we bake it into a texture ?
 
 ## Abstract GPU  API over OpenGL and Vulkan
 
+## Scripting
+
+Everythin that is doable from the UI should be doable via scripting.
+
+For the language I really like Typescript, but all options should be considered.
+
 ## Node system
 
 ## Ray Marching

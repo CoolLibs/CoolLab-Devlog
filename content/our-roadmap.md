@@ -34,6 +34,8 @@ Data usable across the different systems.
 
 See [Bezier Rgb Curves](../bezier-rgb-curves/)
 
+And how do we send these curves to the shader ? Do we bake it into a texture ?
+
 ## Premultiplied alpha
 
 ## Improve timeline navigation / display

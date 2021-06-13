@@ -3,8 +3,6 @@ title: "Dev Guide"
 toc: true
 ---
 
-If you want to take part in the discussion, [**join us on Discord**](https://discord.gg/JuNbK5Squb) !
-
 Here you will find useful information to start working on the project :
 
 ## Clone

@@ -34,16 +34,6 @@ to ignore it from your commits (It does change every time you move a window in y
 
 You should only commit it once in a while, when new windows are added for example.
 
-## Work on a branch
-
-**Never commit directly on the *main* branch !** This is to avoid having to resolve merge conflicts on every commit while many people work on different areas. It is simpler that we each work on a branch, and only merge once in a while.
-
-When you start working on a feature, create a dedicated branch and work there.
-
-Once the feature is finished (or advanced enough that it would be interesting to merge) :
-- merge *main* into your branch and resolve any conflict that might arise
-- submit a pull request and wait for the peer review
-
 ## Logging
 
 To log to the console, use
@@ -80,7 +70,7 @@ You can ignore some warnings and control the look of the messages in the *App* m
 
 We use Doxygen-style documentation. I would suggest you install [this extension for VS Code](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
 
-Then you simply need to type /\*\* and press *enter* to generate the documenting comment for the class or method.
+Then you simply need to type */\*\** and press *enter* to generate the documenting comment for the class or method.
 
 Try to be as descriptive as possible in your documentation : mention any hickups and subtleties, and give an example if the usage is not obvious.
 
@@ -158,6 +148,16 @@ class MyClass {
 ## When to : Write a Cool module
 
 Everything that might be reused across projects should be part of the Cool framework.
+
+## Work on a branch
+
+**Never commit directly on the *main* branch !** This is to avoid having to resolve merge conflicts on every commit while many people work on different areas. It is simpler that we each work on a branch, and only merge once in a while.
+
+When you start working on a feature, create a dedicated branch and work there.
+
+Once the feature is finished (or advanced enough that it would be interesting to merge) :
+- merge *main* into your branch and resolve any conflict that might arise
+- submit a pull request and wait for the peer review
 
 ## Commit Guidelines
 

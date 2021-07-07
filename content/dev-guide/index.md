@@ -98,7 +98,7 @@ It is a great way of creating and sharing knowledge : these resources will surel
 If there is some invariant that must be verified, add debug checks to make sure users of your code don't mess up !
 You can use *assert* in the simpler cases, but sometimes you will need to add variables to keep track of some state. In that case, wrap the debug code in a 
 ```
-#ifndef NDEBUG
+#ifdef DEBUG
 // . . .
 #endif
 ```
@@ -110,7 +110,7 @@ An example would be to make sure an initialization function is called once, and 
 class MyClass {
 public:
       void initialize() {
-#ifndef NDEBUG
+#ifdef DEBUG
             assert(!_is_initialized);
             _is_initialized = true;
 #endif
@@ -123,7 +123,7 @@ public:
       }
 
 private:
-#ifndef NDEBUG
+#ifdef DEBUG
       bool _is_initialized = false;
 #endif
 };

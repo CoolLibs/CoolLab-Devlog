@@ -16,13 +16,13 @@ git clone --recurse-submodules https://github.com/CoolLibs/CoolLab
 
 Install [CMake](https://cmake.org/download/). If you already have it, make sure you have version 3.16 or later.
 
-Then, I recommend [this VS Code extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools).
+Then, I recommend this VS Code extension : [ms-vscode.cmake-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools).
 
 Finally you will need to setup the extension with a compiler. Here is [the tutorial](https://code.visualstudio.com/docs/cpp/cmake-linux). It is based on Linux but at the bottom of the page you will find the explanations to adapt it for [Windows](https://code.visualstudio.com/docs/cpp/config-msvc) and [Mac](https://code.visualstudio.com/docs/cpp/config-clang-mac).
 
 ## imgui.ini
 
-The *imgui.ini* file stores the position and size of our ImGui windows. It is nice to have it on the repo so that anyone cloning it will get a nice UI layout from the get go.
+The ```imgui.ini``` file stores the position and size of our ImGui windows. It is nice to have it on the repo so that anyone cloning it will get a nice UI layout from the get go.
 
 But you might want to do 
 
@@ -34,6 +34,23 @@ to ignore it from your commits (It does change every time you move a window in y
 
 You should only commit it once in a while, when new windows are added for example.
 
+## Formatting
+
+We use the famous ```clang-format``` as our formatting tool. You will need to install it (on Windows this happens through the ```Visual Studio Installer``` : modify your ```Visual Studio Build Tools``` and add ```C++ Clang Tools for Windows```).
+
+Then on VS Code I recommended this extension : [xaver.clang-format](https://marketplace.visualstudio.com/items?itemName=xaver.clang-format) ; and you should enable ```Format on Save``` in your VS Code settings (as well as ```Format on Paste``` and ```Format on Type```).
+
+In some very specific cases you can disable ```clang-format``` locally to use some non-standard formatting : 
+
+```cpp
+// clang-format off
+inline void on_mouse_move  (Camera& camera, glm::vec2 const& delta) { std::visit([&](auto&& state) { state.on_mouse_move  (*this, camera, delta); }, _state); }
+inline void on_wheel_down  (Camera& camera, int mods)               { std::visit([&](auto&& state) { state.on_wheel_down  (*this, camera, mods);  }, _state); }
+inline void on_wheel_up    (Camera& camera)                         { std::visit([&](auto&& state) { state.on_wheel_up    (*this, camera);        }, _state); }
+inline void on_wheel_scroll(Camera& camera, float dl)               { std::visit([&](auto&& state) { state.on_wheel_scroll(*this, camera, dl);    }, _state); }
+// clang-format on
+```
+
 ## Logging
 
 To log to the console, use
@@ -42,17 +59,17 @@ Log::info("You can use a variable, or a string like this one, which can be templ
 Log::warn("same parameters");
 Log::error("same parameters");
 ```
-The difference is that *info* outputs green text, *warn* is yellow and *error* is red.
-Also, *error* will trigger a breakpoint (you can use *error_without_breakpoint* instead if you don't want that behaviour).
+The difference is that ```info``` outputs green text, ```warn``` is yellow and ```error``` is red.
+Also, ```error``` will trigger a breakpoint (you can use ```error_without_breakpoint``` instead if you don't want that behaviour).
 
 Note that those logs will be removed in release builds.
-If you want to display a message to the end user, use Log::ToUser instead of Log.
+If you want to display a message to the end user, use ```Log::ToUser``` instead of ```Log``` (you will need to include ```<Cool/Log/ToUser.h> ```).
 
 ## OpenGL
 
 ### GLDebug
 
-Always wrap your OpenGL calls in the *GLDebug(...)* macro. It will add debug checks even if your computer doesn't support modern OpenGL debugging.
+Always wrap your OpenGL calls in the ```GLDebug(...)``` macro. It will add debug checks even if your computer doesn't support modern OpenGL debugging.
 
 ```cpp
 GLDebug(GLuint program_id = glCreateProgram());
@@ -64,11 +81,11 @@ GLDebug(glValidateProgram(program_id));
 
 Modern debugging happens automatically.
 
-You can ignore some warnings and control the look of the messages in the *App* module, under *internal/GLDebugCallback.h*.
+You can ignore some warnings and control the look of the messages in the ```App``` module, under ```internal/GLDebugCallback.h```.
 
 ## Write documentation
 
-We use Doxygen-style documentation. I would suggest you install [this extension for VS Code](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
+We use Doxygen-style documentation. I would suggest you install this extension for VS Code : [cschlosser.doxdocgen](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
 
 Then you simply need to type */\*\** and press *enter* to generate the documenting comment for the class or method.
 
@@ -96,7 +113,7 @@ It is a great way of creating and sharing knowledge : these resources will surel
 ## Write debug checks
 
 If there is some invariant that must be verified, add debug checks to make sure users of your code don't mess up !
-You can use *assert* in the simpler cases, but sometimes you will need to add variables to keep track of some state. In that case, wrap the debug code in a 
+You can use ```assert``` in the simpler cases, but sometimes you will need to add variables to keep track of some state. In that case, wrap the debug code in a 
 ```
 #ifdef DEBUG
 // . . .
@@ -109,37 +126,37 @@ An example would be to make sure an initialization function is called once, and 
 ```cpp
 class MyClass {
 public:
-      void initialize() {
+    void initialize() {
 #ifdef DEBUG
-            assert(!_is_initialized);
-            _is_initialized = true;
+        assert(!_is_initialized);
+        _is_initialized = true;
 #endif
-            // . . .
-      }
+        // . . .
+    }
 
-      void use_my_class() {
-            assert(_is_initialized);
-            // . . .
-      }
+    void use_my_class() {
+        assert(_is_initialized);
+        // . . .
+    }
 
 private:
 #ifdef DEBUG
-      bool _is_initialized = false;
+    bool _is_initialized = false;
 #endif
 };
 ```
 
 ## How to : Write a Cool module
 
-Create a dedicated folder, and an "internal" folder inside it. In "internal" you will put your .cpp files, as well as the .h that are not part of the public API you want to expose.
+Create a dedicated folder, and an ```internal``` folder inside it. In ```internal``` you will put your ```.cpp``` files, as well as the ```.h``` that are not part of the public API you want to expose.
 
-Wrap your code in the Cool namespace
+Wrap your code in the ```Cool``` namespace
 
 ```cpp
 namespace Cool {
 
 class MyClass {
-      // . . .
+    // . . .
 };
 
 } // namespace Cool
@@ -151,12 +168,12 @@ Everything that might be reused across projects should be part of the Cool frame
 
 ## Work on a branch
 
-**Never commit directly on the *main* branch !** This is to avoid having to resolve merge conflicts on every commit while many people work on different areas. It is simpler that we each work on a branch, and only merge once in a while.
+**Never commit directly on the ```main``` branch !** This is to avoid having to resolve merge conflicts on every commit while many people work on different areas. It is simpler that we each work on a branch, and only merge once in a while.
 
 When you start working on a feature, create a dedicated branch and work there.
 
 Once the feature is finished (or advanced enough that it would be interesting to merge) :
-- merge *main* into your branch and resolve any conflict that might arise
+- merge ```main``` into your branch and resolve any conflict that might arise
 - submit a pull request and wait for the peer review
 
 ## Commit Guidelines
@@ -238,10 +255,14 @@ They are prefixed with an underscore like so :
 ```cpp
 class MyClass {
 public:
-      MyClass() = default;
-      MyClass(float my_member_variable);
+    MyClass() = default;
+    MyClass(float my_member_variable);
 
 private:
-      float _my_member_variable = 0.f;
+    float _my_member_variable = 0.f;
 };
 ```
+
+#### Formatting
+
+The formatting is done automatically through ```clang-format```.

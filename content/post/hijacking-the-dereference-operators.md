@@ -38,12 +38,12 @@ class MyDataWrapper {
 public:
       void do_something_else();
       // -- Getters --
-      inline float field1() { return _my_data.field1; }
-      inline float field2() { return _my_data.field2; }
-      inline float field3() { return _my_data.field3; }
-      inline float field4() { return _my_data.field4; }
-      inline float field5() { return _my_data.field5; }
-      inline void do_something() { _my_data.do_something(); }
+      float field1() { return _my_data.field1; }
+      float field2() { return _my_data.field2; }
+      float field3() { return _my_data.field3; }
+      float field4() { return _my_data.field4; }
+      float field5() { return _my_data.field5; }
+      void do_something() { _my_data.do_something(); }
       // -- Getters --
 
 private:
@@ -60,7 +60,7 @@ class MyDataWrapper {
 public:
       void do_something_else();
       // -- Getters --
-      inline const MyData& get() const { return _my_data; }
+      const MyData& get() const { return _my_data; }
       // -- Getters --
 
 private:
@@ -99,8 +99,8 @@ class MyDataWrapper {
 public:
       void do_something_else();
       // -- Getters --
-      inline const MyData& operator* () const { return _my_data; }
-      inline const MyData* const operator->() const { return &operator*(); } // Reuse the implementation of operator*
+      const MyData& operator* () const { return _my_data; }
+      const MyData* const operator->() const { return &operator*(); } // Reuse the implementation of operator*
       // -- Getters --
 
 private:

@@ -100,7 +100,7 @@ public:
       void do_something_else();
       // -- Getters --
       const MyData& operator* () const { return _my_data; }
-      const MyData* const operator->() const { return &operator*(); } // Reuse the implementation of operator*
+      const MyData* operator->() const { return &operator*(); } // Reuse the implementation of operator*
       // -- Getters --
 
 private:

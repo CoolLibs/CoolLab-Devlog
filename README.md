@@ -1,6 +1,8 @@
 # CoolLab Devlog
 
-See the website at : https://coollibs.github.io/CoolLab-Devlog/
+⚠️
+⚠️ This was our old website. We now use https://github.com/CoolLibs/home instead.
+⚠️
 
 How to edit the website :
 
